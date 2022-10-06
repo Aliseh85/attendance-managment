@@ -32,27 +32,27 @@ def speak(audio):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
-        speak("Good Morning Sir !")
+        speak("Good Morning")
 
     elif hour >= 12 and hour < 18:
-        speak("Good Afternoon Sir !")
+        speak("Good Afternoon")
 
     else:
-        speak("Good Evening Sir !")
+        speak("Good Evening")
 
     assname = ("temi")
     speak("I am your Assistant")
     speak(assname)
 
 def username():
-    speak("What should i call you sir")
+    speak("What should i call you")
     uname = takeCommand()
-    speak("Welcome Mister")
+    speak("Welcome")
     speak(uname)
     columns = shutil.get_terminal_size().columns
 
     print("#####################".center(columns))
-    print("Welcome Mr.", uname.center(columns))
+    print("Welcome.", uname.center(columns))
     print("#####################".center(columns))
 
     speak("How can i Help you, Sir")
@@ -61,8 +61,6 @@ def takeCommand():
     r = sr.Recognizer()
 
     with sr.Microphone() as source:
-
-        print("Listening...")
         r.pause_threshold = 1
         audio = r.listen(source)
 
@@ -82,17 +80,10 @@ def sendEmail(to, content):
     server.ehlo()
     server.starttls()
 
-    # Enable low security in gmail
-    server.login('your email id', 'your email password')
-    server.sendmail('your email id', to, content)
-    server.close()
-
 
 if __name__ == '__main__':
     clear = lambda: os.system('cls')
     assname = ("temi")
-    # This Function will clean any
-    # command before execution of this python file
     clear()
     wishMe()
     username()
@@ -349,7 +340,6 @@ if __name__ == '__main__':
             speak("How are you Mister")
             speak(assname)
 
-        # most asked question from google Assistant
         elif "will you be my gf" in query or "will you be my bf" in query:
             speak("I'm not sure about, may be you should give me some time")
 
