@@ -8,3 +8,4 @@ workers file to recognize the faces its connected with attendance so auto attend
 adding new face and saving new face encodings in a relevant database file
 for more explantion leave a comment
 for the android application version of this app leave a comment
+**the android app save data at a real time firebase database
